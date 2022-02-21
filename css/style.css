@@ -1,0 +1,853 @@
+:root {
+    --light-blue: #F2FBFF;
+    --dark-blue-text: #00446B;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'open Sans', sans-serif;
+    background: var(--light-blue);
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+/* ----- TYPOGRAPHY ----- */
+
+body {
+    font-size: 14px;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #067EC1;
+}
+
+p {
+    line-height: 1.6em;
+}
+
+li {
+    line-height: 1.6em;
+}
+
+.title > p {
+    font-size: 16px;
+    line-height: 0.75em;
+    color: #599EC4;
+}
+
+/* navigation */
+
+.nav__list {
+    font-size: 16px;
+}
+
+/* intro */
+
+h1 {
+    font-family: 'montserrat', sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.3em;
+}
+
+.intro__primary > p {
+    font-size: 16px;
+    color: #FDFEFF;
+    line-height: 1.4em;
+    letter-spacing: 0.3px;;
+}
+
+.intro__primary > .btn {
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+}
+
+/* diensten */
+
+.diensten__body {
+    color: #002B43;
+    line-height: 1.4em;
+}
+
+.diensten__work-area {
+    font-size: 12px;
+    color: #4E778E;
+}
+
+/* afspraak */
+
+.afspraak__header h2 {
+    color: #FFF;
+}
+
+.afspraak__header p {
+    color: #FFF5CC;
+}
+
+.contact-detail > p {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* over mij */
+
+.over-mij__header h2 {
+    color: #FFFFFF;
+}
+
+.over-mij__header p {
+    color: #DCF4FF;
+}
+
+/* footer */
+
+.footer__part {
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+}
+
+.footer__part > h3 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.footer__part li,
+.footer__part p {
+    color: #D8E5EB;
+}
+
+/* ----- LAYOUT ----- */
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.icon {
+    width: 35px;
+}
+
+.icon--small {
+    width: 25px;
+}
+
+.icon--large {
+    width: 45px;
+}
+
+.white-section {
+    margin-top: 24px;
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 24px 20px 24px 42px;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.03);
+}
+
+.background-partially {
+    background: #40ABE6;
+    background-image: 
+        linear-gradient(to bottom, #F2FBFF, #F2FBFF 20px, rgba(0,0,0,0) 20px),
+        linear-gradient(to top, #F2FBFF, #F2FBFF 20px, rgba(0,0,0,0) 20px)
+    ;
+    position: relative;
+}
+
+.note {
+    border-radius: 12px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.note__header {
+    background: #2193D3;
+    padding: 17px 17px 10px;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    align-items: flex-end;
+}
+
+.note__body {
+    background: #FFFFFF;
+    padding: 25px 17px;
+    border-radius: 0 0 12px 12px;
+}
+
+/* header */
+
+header.navbar {
+    background: #FFFFFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    display: block;
+    width: 100%;
+    z-index: 1;
+}
+
+.navbar > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    max-height: 50px;
+}
+
+.burger {
+    position: relative;
+    z-index: 1;
+    padding: 15px;
+    margin: -15px;
+    transition: background-color 250ms;
+}
+
+.burger:hover,
+.burger:focus {
+    cursor: pointer;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+}
+
+.burger .line {
+    width: 30px;
+    height: 3px;
+    margin: 7px;
+    background-color: #a1a1a1;
+    border-radius: 5px;
+    transition: background-color 250ms;
+}
+
+.burger:hover .line,
+.burger:focus .line {
+    background-color: #4E778E;
+}
+
+.nav__list {
+    position: absolute;
+    list-style: none;
+    display: block;
+    flex-direction: column;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    min-width: 250px;
+    padding-top: 85px;
+    text-align: right;
+    background: #FFFFFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: 350ms right;
+}
+
+.hidden {
+    right: -250px;
+    transition: 200ms right;
+}
+
+.nav__list a {
+    display: block;
+    text-decoration: none;
+    color: var(--dark-blue-text);
+    width: 100%;
+    padding: 25px 5vw 25px 0;               
+    border-top: 1px solid #f3f3f3
+}
+
+.nav__list a:hover,
+.nav__list a:focus {
+    cursor: pointer;
+    background-color: #f5f5f5 ;
+}
+
+/* intro */
+
+.intro {
+    background: linear-gradient(#33A5E4, #5EB7E8);
+    padding: 75px 0 75px 0;
+
+}
+
+.intro__primary > p {
+    margin-top: 28px;
+}
+
+.intro__primary > .btn {
+    text-align: center;
+    display: block;
+    background: #FFC800;
+    padding: 14px;
+    border-radius: 8px;
+    margin-top: 36px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    transition: background 200ms;
+    transition: transform 350ms
+}
+
+.intro__primary > .btn:hover,
+.intro__primary > .btn:focus {
+    background: #eeba00;
+    transform: scale(1.02);
+} 
+
+.intro__secondary {
+    display: none;
+}
+
+/* diensten */
+
+#diensten {
+    scroll-margin-top: 80px;
+}
+
+.diensten {
+    padding: 36px 0 20px 0;
+}
+
+.diensten__header {
+    display: flex;
+    align-items: center;
+}
+
+.diensten__header > img {
+    margin-left: 5px;
+}
+
+.diensten__body {
+    margin-top: 16px;
+}
+
+.white-section.desktop {
+    display: none;
+}
+
+.diensten__work-area {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    align-items: center;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.diensten__work-area > img {
+    margin-top: 24px;
+}
+
+.diensten__work-area > p {
+    text-align: center;
+    margin-top: 6px;
+}
+
+/* afspraak */
+
+#afspraak {
+    scroll-margin-top: 120px;
+}
+
+.afspraak {
+    margin: 40px 0;
+}
+
+.afspraak__header {
+    background: #FFC800;
+}
+
+.afspraak__header > .icon {
+    margin-left: 5px;
+    transform: translateY(-3px);
+}
+
+.contact-detail {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+@media (min-width: 345px) {
+
+    .contact-detail {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .contact-detail > p {
+        margin-left: 10px;
+    }
+}
+
+.contact-detail:first-of-type {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.afspraak__side {
+    display: none;
+}
+
+/* tarief */
+
+#tarief {
+    scroll-margin-top: 100px;
+}
+
+.tarief {
+    padding: 40px 0 76px;
+}
+
+.tarief__header {
+    display: flex;
+    align-items: flex-end;
+}
+
+.tarief__header > img {
+    margin-left: 5px;
+    transform: translateY(-4px);
+}
+
+.tarief__body {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarief__body > .white-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:  50px 17px;
+    order: 2;
+}
+
+.tarief__body > p:nth-child(2) {
+    margin-top: 18px;
+    order: 3;
+}
+
+.white-section-part {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.white-section span {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.plus-symbol {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 8%;
+}
+
+.white-section-part > .clock {
+    transform: translateX(3px);
+}
+
+/* over mij */
+
+#over-mij {
+    scroll-margin-top: 110px;
+}
+
+.over-mij__header {
+    background: #067EC1;
+    padding: 17px 17px 10px;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    align-items: flex-end;
+}
+
+.over-mij__header > img {
+    display: none;
+}
+
+.over-mij__body > p:first-of-type {
+    margin-top: 0;
+}
+.over-mij__body p {
+    margin-top: 1em;
+}
+
+.over-mij__body > img {
+    border-radius: 12px;
+    margin-top: 1em;
+    width: 100%;
+}
+
+/* footer */
+
+footer {
+    margin-top: 100px;
+    background: #40ABE6;
+    text-align: center;
+    padding: 44px 0;
+}
+
+.footer__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__part {
+    margin: 50px auto 0;
+    max-width: 300px;
+}
+
+.footer__part > h3 {
+    margin-bottom: 8px;
+}
+
+.footer__part li {
+    list-style: none;
+}
+
+.footer__logo {
+    height: 50px;
+    align-self: center;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 720px) {
+
+    /* TYPOGRAPHY */ 
+
+    h1 {
+        font-size: 38px;
+    }
+    
+    /* LAYOUT */
+
+    .container {
+        max-width: 1220px;
+    }
+
+    .note__header,
+    .note__body {
+        padding: 17px 25px;
+    }
+
+    .diensten__header,
+    .tarief__header {
+        justify-content: center;
+    }
+
+    .diensten__body > p,
+    .tarief__body > p {
+        text-align: center;
+        max-width: 550px;
+        margin: 0 auto;
+    }
+
+    .white-section {
+        display: flex;
+        width: 550px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* intro */
+
+    .split {
+        display: flex;
+        flex-direction: row;
+        flex-basis: 0;
+        justify-content: space-between;
+        height: 100%;
+        position: relative;
+    }
+
+    .intro {
+        padding-bottom: 0;
+    }
+
+    .intro__primary {
+        width: 50%;
+        align-self: flex-start;
+    }
+
+    .intro__primary > .btn {
+        max-width: 500px;
+    }
+
+    .intro__primary > .btn {
+        margin-bottom: 85px;
+    }
+
+    .intro__secondary {
+        right: 0;
+        position: absolute;
+        display: block;
+        height: 100%;
+        width: 49%;
+        align-self: flex-end;
+    }
+
+    .intro__secondary > img {
+        height: 100%;
+        max-width: 100%;
+        float: right;
+    }
+
+    /* diensten */
+
+    .diensten {
+        padding-bottom: 80px;
+    }
+
+    .diensten__body {
+        margin-top: 32px;
+    }
+
+    .diensten__body > .white-section {
+        margin-top: 48px;
+    }
+
+    /* afspraak */
+
+    .afspraak-container {
+        justify-content: space-evenly;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .afspraak__note {
+        width: 52%;
+        max-width: 400px;
+    }
+
+    .afspraak__body > p {
+        margin: 15px 0 20px;
+    }
+
+    .afspraak__side {
+        display: block;
+        text-align: center;
+        width: 40%;
+    }
+    
+    .afspraak__side > img {
+        width: 30%;
+    }
+
+    .afspraak__side > p {
+        max-width: 300px;
+        color: #D8E5EB;
+        margin: 15px auto 0
+    }
+    /* tarief */
+
+    .tarief {
+        padding-bottom: 120px;
+    }
+
+    .tarief__body p:nth-child(2) {
+        margin-top: 24px;
+    }
+
+    /* over-mij */
+
+    .over-mij > .container {
+        max-width: 900px;
+    }
+
+    .over-mij__body {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .over-mij__body > div {
+        width: 48%;
+    }
+
+    .over-mij__body > img {
+        margin-top: 0;
+        width: 48%;
+        object-fit: cover;
+        object-position: left;
+    }
+} 
+    /* footer */
+
+@media (min-width: 940px) {
+    /* TYPOGRAPHY */
+
+body {
+    font-size: 16px;
+}
+
+h1{
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+.title > p,
+.intro__primary > p {
+    font-size: 18px;
+}
+
+.diensten__work-area {
+    font-size: 14px;
+}
+
+/* LAYOUT */
+
+.icon {
+    width: 40px;
+}
+
+.icon--small {
+    width: 32px;
+}
+
+.icon--large {
+    width: 56px;
+}
+
+.afspraak__header > .icon {
+    transform: translateY(-6px);
+    margin-left: 10px;
+}
+
+/* navbar */
+
+.burger {
+    display: none;
+}
+
+.nav__list {
+    position: static;
+    flex-direction: column;
+    height: auto;
+    padding: 0;
+    box-shadow: none;
+}
+
+.nav__list li {
+    display: inline;
+}
+
+.nav__list a {
+    display: unset;
+    padding: 0;
+    margin: 0;
+    border: none;
+    margin-left: 5px;
+    padding: 25px 40px;
+    font-size: 18px;
+    color: #077EC1;
+    letter-spacing: 2px;
+}
+
+.nav__list a:last-of-type {
+    padding-right: 0;
+}
+
+.nav__list a:hover,
+.nav__list a:focus {
+    cursor: pointer;
+    background-color: unset;
+    color: #00446B;
+}
+
+/* diensten */
+
+.white-section.mobile {
+    display: none;
+}
+
+.white-section.desktop {
+    display: flex;
+    padding: 36px 0;
+    width: 100%;
+    max-width: 940px;
+    justify-content: space-evenly;
+}
+
+.white-section__list {
+    display: flex;
+    flex-direction: column;
+}
+
+.white-section__list > img {
+    align-self: center;
+    transform: translateX(-40px);
+}
+
+.white-section__list > ul > li:first-of-type {
+    margin-top: 16px;
+}
+
+/* footer */
+
+footer > .container {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer__part {
+    margin: 0;
+    max-width: 350px;
+}
+
+.contact {
+    text-align: left;
+}
+
+.informatie {
+    text-align: right;
+}
+
+.footer__logo {
+    margin: 0 auto 50px 0;
+    height: 64px;
+}
+
+}
+
+    @media (min-width: 1080px) {
+
+        /* TYPOGRAPHY */
+
+        h1 {
+            font-size: 64px;
+        }
+
+        /* LAYOUT */
+
+        .logo {
+            max-height: 60px;
+        }
+    }

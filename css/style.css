@@ -11,16 +11,21 @@
 
 html {
     scroll-behavior: smooth;
-    width: 100vw;
-    overflow-x: hidden;
 }
 
 body {
     font-family: 'open Sans', sans-serif;
     background: var(--light-blue);
     width: 100vw;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+.no-scrolling {
+    height: 100%;
     overflow: hidden;
 }
+
 
 /* ----- TYPOGRAPHY ----- */
 
@@ -194,13 +199,14 @@ h1 {
 
 /* header */
 
-header.navbar {
+.navbar {
     background: #FFFFFF;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 16px 0;
     position: sticky;
     top: 0;
-    display: block;
+    left: 0;
+    display: inline-block;
     width: 100vw;
     z-index: 10;
 }
@@ -261,6 +267,10 @@ header.navbar {
     transition: transform 300ms;
 }
 
+.hidden {
+    transform: translateX(100%);
+}
+
 .nav__list li {
     width: 90%;
     height: 100px;
@@ -281,10 +291,6 @@ header.navbar {
 
 .nav__list a:hover {
     font-weight: bold;
-}
-
-.hidden {
-    transform: translateX(100%);
 }
 
 /* intro */
@@ -777,6 +783,7 @@ h2 {
     box-shadow: none;
     height: unset;
     transform: translateX(0);
+    width:auto;
 }
 
 .nav__list li {

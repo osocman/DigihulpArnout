@@ -268,7 +268,7 @@ h1 {
 }
 
 .hidden {
-    transform: translateX(100%);
+    display: none;
 }
 
 .nav__list li {
@@ -555,7 +555,7 @@ footer {
     h1 {
         font-size: 38px;
     }
-    
+
     /* LAYOUT */
 
     .container {
@@ -764,10 +764,6 @@ h2 {
     width: 56px;
 }
 
-.afspraak__header > .icon {
-    transform: translateY(-6px);
-    margin-left: 10px;
-}
 
 /* navbar */
 
@@ -784,6 +780,10 @@ h2 {
     height: unset;
     transform: translateX(0);
     width:auto;
+}
+
+.hidden {
+    display: flex;
 }
 
 .nav__list li {
